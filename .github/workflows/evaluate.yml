@@ -1,34 +1,13 @@
-name: Evaluate Student Answer
-
-on:
-  workflow_dispatch:
-    inputs:
-      question:
-        description: 'Question'
-        required: true
-      reference_answer:
-        description: 'Reference Answer'
-        required: true
-      student_answer:
-        description: 'Student Answer'
-        required: true
-
 jobs:
-  evaluate:
+  use-gpt-3.5:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - name: Install Dependencies
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      
+      - name: Call GPT-3.5
         run: |
-          # If you have dependencies, install them here
-          # pip install -r requirements.txt
-      - name: Run Evaluation Script
-        run: python evaluate.py
-        env:
-          QUESTION: ${{ github.event.inputs.question }}
-          REFERENCE_ANSWER: ${{ github.event.inputs.reference_answer }}
-          STUDENT_ANSWER: ${{ github.event.inputs.student_answer }}
+          curl -X POST "https://api.openai.com/v1/completions" \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "{\"model\": \"gpt-3.5-turbo\", \"prompt\": \"Translate the following English text to French: '${{ github.event.inputs.question }}'\", \"temperature\": 0.5, \"max_tokens\": 60}"
