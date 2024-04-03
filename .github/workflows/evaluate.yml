@@ -8,6 +8,6 @@ jobs:
       - name: Call GPT-3.5
         run: |
           curl -X POST "https://api.openai.com/v1/completions" \
-          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Authorization: Bearer ${{ s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 }}" \
           -H "Content-Type: application/json" \
           -d "{\"model\": \"gpt-3.5-turbo\", \"prompt\": \"Translate the following English text to French: '${{ github.event.inputs.question }}'\", \"temperature\": 0.5, \"max_tokens\": 60}"
