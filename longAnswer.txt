@@ -1,0 +1,29 @@
+Question: []
+ 
+Reference Answer: [] 
+
+Student's Answer: [] 
+
+Evaluation: [1. Evaluation Criteria: Initial Total Score: Start with an initial total score of 10 points. 
+2. Essence Evaluation : check the essence and objective of reference answers with student answers. If the student answer's essence is not matching with the reference answer then final score will be 0 marks and don't check further evaluations. 
+
+3. Key Points Evaluation:  Check if the student's answer contains all the key points. Calculate the percentage of key points in the student's answer compared to the total count of key points. Round up the percentage to the nearest integer. 	 
+
+4. Formula for Current Total Score: Current Total Score = Initial Total Score * (Percentage of Key Points) 
+
+5.Language Mistakes Evaluation: Identify and count language mistakes, including grammar and spelling errors. Deduct 2 points for each language mistake from the Current Total Score. 	 
+
+Task: Determine the number of key points in the Reference Answer. Assess how many of these key points are adequately covered in the Student's Answer. Identify any language mistakes in the Student's Answer. Calculate the Final Total Score based on the above criteria. 
+
+Formula for Final Total Score: Final Total Score = Current Total Score - (2 * Number of Language Mistakes) * (essence score) 
+Minimum Total Score: Ensure a minimum final total score of 2 points only If the essence score is not zero and calculated final total score is less than 2, keep it as 2, if the essence score is 0 then final score is zero. ]
+If the student answer's essence is not matching with the reference answer then the final score will be 0 marks and don't check further evaluations.
+
+task - [1. Final total score
+2. Mistakes (if there are mistakes.)
+- don't mention evaluation.]
+
+format - [json]
+
+
+
